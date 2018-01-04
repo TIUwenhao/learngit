@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tiu.dao.UserDao" >
+
+    <insert id="save" parameterType="com.tiu.entity.User">
+        insert into users(userName,sex,age,birthdate,address) values(#{name},#{sex},#{age},#{birthdate},#{address})
+    </insert>
+
+    <select id="selectById" resultType="com.tiu.entity.User">
+        select * from users where userID = #{id}
+    </select>
+
+    <update id="updateById" parameterType="com.tiu.entity.User">
+        update users set
+        userName = #{name} ,
+        sex = #{sex} ,
+        age = #{age} ,
+        birthdate = #{birthdate} ,
+        address = #{address}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from users where userID = #{id}
+    </delete>
+
+    <select id="queryAll" resultType="com.tiu.entity.User">
+        select * from users
+    </select>
+
+</mapper>
