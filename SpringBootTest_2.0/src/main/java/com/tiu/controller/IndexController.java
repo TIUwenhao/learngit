@@ -137,6 +137,12 @@ public class IndexController {
 		return "success";
 	}
 	
+	@RequestMapping("/testRemotePush")
+	public String testRemotePush(){
+		System.out.println("测试推送仓库");		
+		return "success";
+	}
+	
 	@RequestMapping("/testValue")
 	@ResponseBody
 	public String testValue(){		
